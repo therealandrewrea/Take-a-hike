@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${hikes} and ${hikes.size()}">No Hikes on file!  Get out there and explore</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Length</th>
+        <th>Location</th>
+        <th>Categories</th>
+    </tr>
+
+    <tr th:each="hike : ${hikes}">
+        <td th:text="${hike.name}"></td>
+        <td th:text="${hike.description}"></td>
+        <td th:text="${hike.length}"></td>
+        <td th:text="${hike.location}"></td>
+        <td th:text="${hike.categories}"><td>
+    </tr>
+
+</table>
+
+<a href="/add">Add</a> |
+<a href="/remove">Remove</a>
+
+</body>
+</html>

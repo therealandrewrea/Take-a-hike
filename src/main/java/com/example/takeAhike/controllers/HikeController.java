@@ -56,7 +56,7 @@ public class HikeController {
 
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveHikeForm(Model model) {
-        model.addAttribute("cheeses", hikeDao.findAll());
+        model.addAttribute("hikes", hikeDao.findAll()); // replaced "cheeses" with hikes, most likely old //
         model.addAttribute("title", "Remove Hike");
         return "/remove";
     }

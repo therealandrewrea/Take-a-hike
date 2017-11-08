@@ -51,4 +51,6 @@ public class CategoryController {
 
         }
 
+        // TODO add remove function, link with remove category template //
+
     }
